@@ -62,7 +62,7 @@
         <version>3.0.0-M5</version>
         <configuration>
           	<includes>
-          		**/Beauty.java
+          		**/Order_Medicine.java
             </includes>
         </configuration>
       </plugin>
