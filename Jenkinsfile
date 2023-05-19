@@ -1,15 +1,23 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Source code') {
       steps {
-        echo "Build Stage"
+        git 'https://github.com/GurleenJohal/BeautyModule.git'
+        echo "Source code"
       }
     }
-    stage('Test') {
+    stage('Build') {
       steps {
-        echo "Test Stage"
+        bat script:'mvn compile'
+        echo "Build"
       }
+    }
+    stage('Run test') {
+      steps {
+        bat script:'mvn test -Dbrowser-localchrome'
+        echo "Test Run"
+       }
     }
     stage('Deploy') {
       steps {
