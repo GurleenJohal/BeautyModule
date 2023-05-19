@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Source code') {
       steps {
-        git 'https://github.com/GurleenJohal/BeautyModule.git'
+       git branch: 'branch1', url: 'https://github.com/GurleenJohal/BeautyModule.git'
         echo "Source code"
       }
     }
